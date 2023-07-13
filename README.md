@@ -1,44 +1,36 @@
-# Object Detection
-# Object detection using deep learning with OpenCV and Python 
+# Object-detection-in-Satellite-Images
 
-OpenCV `dnn` module supports running inference on pre-trained deep learning models from popular frameworks like Caffe, Torch and TensorFlow. 
+Object Detection on the Satellite Images
 
-When it comes to object detection, popular detection frameworks are
- * YOLO
- * SSD
- * Faster R-CNN
- 
- Support for running YOLO/DarkNet has been added to OpenCV dnn module recently. 
- 
- ## Dependencies
-  * opencv
-  * numpy
-  
-`pip install numpy opencv-python`
+DYSL-AI, DRDO
 
-**Note: Compatability with Python 2.x is not officially tested.**
 
- ## YOLO (You Only Look Once)
- 
- Download the pre-trained YOLO v3 weights file from this [link](https://pjreddie.com/media/files/yolov3.weights) and place it in the current directory or you can directly download to the current directory in terminal using
- 
- `$ wget https://pjreddie.com/media/files/yolov3.weights`
- 
- Provided all the files are in the current directory, below command will apply object detection on the input image `dog.jpg`.
- 
- `$ python yolo_opencv.py --image dog.jpg --config yolov3.cfg --weights yolov3.weights --classes yolov3.txt`
- 
- 
- **Command format** 
- 
- _$ python yolo_opencv.py --image /path/to/input/image --config /path/to/config/file --weights /path/to/weights/file --classes /path/to/classes/file_
- 
- Checkout the [blog post](http://www.arunponnusamy.com/yolo-object-detection-opencv-python.html) to learn more.
- 
- ### sample output :
- ![](object-detection.jpg)
- 
-Checkout the object detection implementation available in [cvlib](http:cvlib.net) which enables detecting common objects in the context through a single function call `detect_common_objects()`.
- 
- 
- (_SSD and Faster R-CNN examples will be added soon_)
+## •	Introduction:
+This report explores the application of YOLOv3 (You Only Look Once version 3) for object detection in satellite imagery. By leveraging YOLOv3, we aim to enhance the efficiency and accuracy of object detection in satellite images, enabling improved analysis and interpretation of remote sensing data. This report provides an overview of the YOLOv3 algorithm, its use in satellite image analysis, and an evaluation of its performance using real-world datasets.
+
+## •	Algorithm for Object Detection using YOLOv3:
+1. Pre-trained YOLOv3 weights and configuration should be loaded.
+2. Reduce the size and normalize the satellite image.
+3. Use the YOLOv3 network to generate feature maps from the preprocessed image.
+4. Use non-maximum suppression to get rid of redundant or overlapping detections.
+5. Provide a list of the last detected objects along with their bounding boxes and class labels.
+6. Show the discovered items on the original satellite image.
+Note: The YOLOv3 algorithm and its implementation details can be found in the original paper "YOLOv3: An Incremental Improvement" by Joseph Redmon and Ali Farhadi (2018).
+
+
+
+## •	My Contribution:
+1.	Dataset Preparation
+I contributed significantly to the dataset preparation stage of the project, which was essential to the working of the object detection system employing YOLOv3 on satellite photos. In order to ensure a wide range of geographic regions, resolutions, and weather conditions, I undertook substantial study to gather a comprehensive dataset of satellite photos from multiple sources.
+ I played a crucial role in analyzing the object detection results obtained from the YOLOv3 model on the test dataset. I carefully examined the detected objects, their bounding boxes, and class labels in the context of satellite imagery. I documented the findings, insights, and limitations of the object detection system in a comprehensive and clear manner, contributing to the overall report's quality and value.
+
+## •	Limitation/Drawback:
+One drawback of the YOLOv3 method for object detection in satellite photos is how well it performs in difficult situations. The algorithm may have trouble with items that are small in size or have poor contrast compared to their surroundings, despite its general accuracy and efficiency. This restriction may result in situations where the system is unable to detect objects or generates unreliable bounding box predictions. As it relies on anchor boxes and non-maximum suppression approaches for localization and suppression of overlapping detections, YOLOv3 may also have trouble recognizing objects that are partially obscured or tightly grouped together. Although efforts have been made to improve the algorithm, these drawbacks show the need for additional study and YOLOv3 fine-tuning, especially in handling complex and challenging scenarios commonly encountered in satellite imagery.
+
+## •	Results:
+The output of satellite imagery object detection can be used for various applications, such as urban planning, land cover mapping, disaster management, environmental monitoring, and infrastructure development, among others. The results enable analysts, researchers, and decision-makers to gain insights, make informed decisions, and extract valuable information from satellite imagery data.
+
+## Resources:
+Original Repository: https://github.com/AlexeyAB/darknet
+
+Darknet framework: http://pjreddie.com/darknet/
